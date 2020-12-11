@@ -1,3 +1,6 @@
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
 """
 Source Code from Keras EfficientDet implementation (https://github.com/xuannianz/EfficientDet) licensed under the Apache License, Version 2.0
 """
@@ -24,10 +27,6 @@ Source Code from Keras EfficientDet implementation (https://github.com/xuannianz
 
 # Code of this model implementation is mostly written by
 # Björn Barz ([@Callidior](https://github.com/Callidior))
-
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
 
 import os
 import json

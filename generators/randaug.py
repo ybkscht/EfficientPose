@@ -1,3 +1,4 @@
+from __future__ import print_function, division, absolute_import
 """
 EfficientPose (c) by Steinbeis GmbH & Co. KG für Technologietransfer
 Haus der Wirtschaft, Willi-Bleicher-Straße 19, 70174 Stuttgart, Germany
@@ -16,8 +17,6 @@ Based on:
 
 The imgaug RandAugment class (https://github.com/aleju/imgaug/blob/0101108d4fed06bc5056c4a03e2bcb0216dac326/imgaug/augmenters/collections.py#L231) licensed under the MIT license
 """
-
-from __future__ import print_function, division, absolute_import
 
 import numpy as np
 

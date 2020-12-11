@@ -1,3 +1,4 @@
+from __future__ import division
 """
 EfficientPose (c) by Steinbeis GmbH & Co. KG für Technologietransfer
 Haus der Wirtschaft, Willi-Bleicher-Straße 19, 70174 Stuttgart, Germany
@@ -37,7 +38,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 """
 
-from __future__ import division
 import numpy as np
 import cv2
 from PIL import Image
