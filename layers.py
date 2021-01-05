@@ -222,17 +222,25 @@ class CalculateTxTy(keras.layers.Layer):
     def call(self, inputs, fx = 572.4114, fy = 573.57043, px = 325.2611, py = 242.04899, tz_scale = 1000.0, image_scale = 1.6666666666666667, **kwargs):
         # Tx = (cx - px) * Tz / fx
         # Ty = (cy - py) * Tz / fy
+        
+        fx = tf.expand_dims(fx, axis = -1)
+        fy = tf.expand_dims(fy, axis = -1)
+        px = tf.expand_dims(px, axis = -1)
+        py = tf.expand_dims(py, axis = -1)
+        tz_scale = tf.expand_dims(tz_scale, axis = -1)
+        image_scale = tf.expand_dims(image_scale, axis = -1)
+        
         x = inputs[:, :, 0] / image_scale
         y = inputs[:, :, 1] / image_scale
-        tz = tf.expand_dims(inputs[:, :, 2] * tz_scale, axis = -1)
+        tz = inputs[:, :, 2] * tz_scale
         
-        x = tf.expand_dims(x - px, axis = -1)
-        y = tf.expand_dims(y - py, axis = -1)
+        x = x - px
+        y = y - py
         
         tx = tf.math.multiply(x, tz) / fx
         ty = tf.math.multiply(y, tz) / fy
         
-        output = keras.layers.Concatenate(axis = -1)([tx, ty, tz])
+        output = tf.stack([tx, ty, tz], axis = -1)
         
         return output
 
