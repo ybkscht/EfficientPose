@@ -8,6 +8,6 @@ import numpy
 
 #setup function to compile the cython modules
 setup(
-    ext_modules=cythonize("utils/compute_overlap.pyx"),
+    ext_modules=cythonize(["utils/compute_overlap.pyx"]),
     include_dirs=[numpy.get_include()]
 )
